@@ -1,2 +1,2 @@
-console.log(helloworld);
-let favFood = prompt('What is your favorite food?');
+console.log(helloworld)
+let favFood = prompt('What is your favorite food?')
