@@ -14,30 +14,34 @@ function getFavFood(){
         document.write('<img src="https://www.buffalowildwings.com/globalassets/menuitems/bww_traditionalwings_sauce2.png?format=png&width=600&v=2" ALIGN="bottom"> ')
     } else {
         document.write('Your favorite food is ' + favFood + '! However I still have other foods I enjoy would you like to guess them?')
-        let yea = 0;
-        let guesses = 10;
+        let correct = false
+        let guesses = 3
         let favFoods = ['pizza', 'pasta', 'wings']
         let favFoodsL = ['<img src= "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/phut_0.jpg?itok=h30EAnkk" ALIGN="bottom">', '<img src="https://image.made-in-china.com/2f0j10HYZRUBWcsGpM/Elbow-Dry-Pasta-Noodles-Pellet-Production-Extrusion-Making-Machine.webp" ALIGN="bottom">','<img src="https://www.buffalowildwings.com/globalassets/menuitems/bww_traditionalwings_sauce2.png?format=png&width=600&v=2" ALIGN="bottom">']
-        for (i = 0; i < guesses; i++ ) {
-            let guessLeft = guesses - i
             let userGuess = prompt('Guess what else do I like to eat:')
-            for(j = 0; j < 2; j++) {
-                while (yea == 0 || guessesLeft > 0) {
+            console.log(userGuess)
+            while ( guesses > 0) {
+                console.log(guesses)
+                for(j = 0; j < favFoods.length; j++) {
                     if (userGuess.toLowerCase() == favFoods[j]) {
                         alert('You are right! I love: ' + favFoods[j])
-                        document.write('You guessed ' + favFoods[j] + ', you are absolutely right I LOVE PIZZA!')
+                        document.write('You guessed ' + favFoods[j] + ', you are absolutely right I LOVE' + favFoods[j] +' !')
                         document.write(favFoodsL[j])
-                        yea = 1;
-                    } else {
-                        alert('not quite, try again')
-                        userGuess = prompt('Guess what else do I like to eat:')
-                        yea = 0;
-                    }
+                        correct = true
+                        break;
+                    } 
                 }
-            
+                if (correct) {
+                    break;
+                }
+                guesses = guesses - 1
+                if (guesses > 0) {
+                    userGuess = prompt('not quite, guess again: ')
+                }
             }
+            console.log('done with while')
             
-        }
+        } 
     }
-}
+
 getFavFood();
