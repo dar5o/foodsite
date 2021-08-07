@@ -1,4 +1,3 @@
-console.log('yo')
 let favFood = prompt('What is your favorite food?')
 function getFavFood(){
     if (favFood.toLowerCase() == 'burgers' || favFood.toLowerCase() == 'sushi') {
@@ -19,9 +18,7 @@ function getFavFood(){
         let favFoods = ['pizza', 'pasta', 'wings']
         let favFoodsL = ['<img src= "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/phut_0.jpg?itok=h30EAnkk" ALIGN="bottom">', '<img src="https://image.made-in-china.com/2f0j10HYZRUBWcsGpM/Elbow-Dry-Pasta-Noodles-Pellet-Production-Extrusion-Making-Machine.webp" ALIGN="bottom">','<img src="https://www.buffalowildwings.com/globalassets/menuitems/bww_traditionalwings_sauce2.png?format=png&width=600&v=2" ALIGN="bottom">']
             let userGuess = prompt('Guess what else do I like to eat:')
-            console.log(userGuess)
             while ( guesses > 0) {
-                console.log(guesses)
                 for(j = 0; j < favFoods.length; j++) {
                     if (userGuess.toLowerCase() == favFoods[j]) {
                         alert('You are right! I love: ' + favFoods[j])
@@ -39,7 +36,6 @@ function getFavFood(){
                     userGuess = prompt('not quite, guess again: ')
                 }
             }
-            console.log('done with while')
             
         } 
     }
